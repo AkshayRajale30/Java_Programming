@@ -2,16 +2,17 @@
     Algorithm
 
     START
-        Accept number from user as no   
-        If the input is negative then convert it to positive 
-        Take one variable sum 
+        Accept number from user as no
+        If the number is negative then convert it to positive
+        Take one variable MaxDigit = 0
         Take one counter
-        Repeat till counter less than or equal to no
-            If counter is even 
-            Then add in sum
-        Increment counter by 1
+        Repeat until number becomes 0
+            Extract last digit using remainder operation (digit = no % 10)
+            If digit is greater than MaxDigit
+                Update MaxDigit = digit
+            Divide number by 10 to remove last digit
         End loop
-        Display addition result
+        Display the value of MaxDigit
     STOP
 */
 
@@ -26,8 +27,8 @@ import java.util.Scanner;
 /////////////////////////////////////////////////////////////////////
 //
 //  Class Name       : Logic
-//  Description      : This class contains a method to display the 
-//                     sum of all even numbers up to given number.
+//  Description      : This class contains a method to find the 
+//                     largest digit in a given number.
 //  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
@@ -35,25 +36,30 @@ import java.util.Scanner;
 
 class Logic
 {
-    public int sumEvenNumbers(int iNo)                               // Input
+    public int largestDigit(int iNo)                               // Input
     {
-        int iSum = 0;
-        int iCnt = 0;
+        int iDigit = 0;
+        int iMax = 0;
 
         if(iNo < 0)                                                // Updater
         {
             iNo = -iNo;
         }
 
-        for(iCnt = 1; iCnt <= iNo; iCnt++)
+        while(iNo != 0)                                            // Loop until number becomes 0
         {
-            if(iCnt % 2 == 0)
+            iDigit = iNo % 10;                                     
+
+            if(iDigit > iMax)                                      
             {
-                iSum = iSum + iCnt;
+                iMax = iDigit;
             }
+
+            iNo = iNo / 10;                                        
         }
-        return iSum;
-    }     
+
+        return iMax;
+    }
 }
 
 /////////////////////////////////////////////////////////////////////
@@ -62,7 +68,7 @@ class Logic
 //
 /////////////////////////////////////////////////////////////////////
 
-class Program20_1
+class Program20_4
 {
     public static void main(String args[])
     {
@@ -74,18 +80,20 @@ class Program20_1
 
         Logic obj = new Logic();                                   // Object creation
 
-        iRet = obj.sumEvenNumbers(iValue);                         // Method call 
+        iRet = obj.largestDigit(iValue);                           // Method call
 
-        System.out.println("Sum of all even numbers up to " + iValue + " is " + iRet);
+        System.out.println("Largest digit in " + iValue + " is " + iRet);
+
         sc.close();
-    }   
+    }
 }
 
 /////////////////////////////////////////////////////////////////////
 //
 //  Testcases successfully handled by the application
 //
-//  Input : 12      Output : Sum of all even numbers up to 12 is 42
-//  Input : 56      Output : Sum of all even numbers up to 56 is 812
+//  Input : 12345     Output : Largest digit in 12345 is 5
+//  Input : 890       Output : Largest digit in 890 is 9
+//  Input : -6572     Output : Largest digit in -6572 is 7
 //
 /////////////////////////////////////////////////////////////////////

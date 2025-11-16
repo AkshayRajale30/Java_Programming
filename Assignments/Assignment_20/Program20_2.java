@@ -2,16 +2,13 @@
     Algorithm
 
     START
-        Accept number from user as no   
-        If the input is negative then convert it to positive 
-        Take one variable sum 
-        Take one counter
-        Repeat till counter less than or equal to no
-            If counter is even 
-            Then add in sum
-        Increment counter by 1
+        Accept number from user as no
+        If the input is negative then convert it to positive
+        Take one counter initialized to no
+        Repeat till counter greater than or equal to 1
+            Display counter
+            Decrement counter by 1
         End loop
-        Display addition result
     STOP
 */
 
@@ -26,8 +23,8 @@ import java.util.Scanner;
 /////////////////////////////////////////////////////////////////////
 //
 //  Class Name       : Logic
-//  Description      : This class contains a method to display the 
-//                     sum of all even numbers up to given number.
+//  Description      : This class contains a method to print numbers
+//                     from N down to 1 in reverse order.
 //  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
@@ -35,25 +32,22 @@ import java.util.Scanner;
 
 class Logic
 {
-    public int sumEvenNumbers(int iNo)                               // Input
+    public void printReverse(int iNo)
     {
-        int iSum = 0;
-        int iCnt = 0;
-
         if(iNo < 0)                                                // Updater
         {
             iNo = -iNo;
         }
 
-        for(iCnt = 1; iCnt <= iNo; iCnt++)
+        System.out.println("Numbers from " + iNo + " down to 1 are:");
+
+        for(int iCnt = iNo; iCnt >= 1; iCnt--)                     // Business logic
         {
-            if(iCnt % 2 == 0)
-            {
-                iSum = iSum + iCnt;
-            }
+            System.out.print(iCnt + " ");
         }
-        return iSum;
-    }     
+
+        System.out.println(); 
+    }
 }
 
 /////////////////////////////////////////////////////////////////////
@@ -62,30 +56,30 @@ class Logic
 //
 /////////////////////////////////////////////////////////////////////
 
-class Program20_1
+class Program20_2
 {
     public static void main(String args[])
     {
-        Scanner sc = new Scanner(System.in);                       // To accept user input
-        int iValue = 0, iRet = 0;
+        Scanner sc = new Scanner(System.in);
+        int iValue = 0;
 
         System.out.print("Enter a number : ");
         iValue = sc.nextInt();
 
         Logic obj = new Logic();                                   // Object creation
 
-        iRet = obj.sumEvenNumbers(iValue);                         // Method call 
+        obj.printReverse(iValue);                                  // Method call
 
-        System.out.println("Sum of all even numbers up to " + iValue + " is " + iRet);
         sc.close();
-    }   
+    }
 }
 
 /////////////////////////////////////////////////////////////////////
 //
 //  Testcases successfully handled by the application
 //
-//  Input : 12      Output : Sum of all even numbers up to 12 is 42
-//  Input : 56      Output : Sum of all even numbers up to 56 is 812
+//  Input : 5     Output : 5 4 3 2 1
+//  Input : 10    Output : 10 9 8 7 6 5 4 3 2 1
+//  Input : -3    Output : 3 2 1
 //
 /////////////////////////////////////////////////////////////////////
