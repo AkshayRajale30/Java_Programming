@@ -21,7 +21,7 @@ import java.util.Scanner;
 //  Class Name       : Logic
 //  Description      : This class contains a method to find the minimum
 //                     among three numbers.
-//  Author           : Chakradhar Rawaji Dugade
+//  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
 /////////////////////////////////////////////////////////////////////
@@ -80,3 +80,4 @@ class Program17_4
 //  Input : -56 32 44    Output : -56
 //
 /////////////////////////////////////////////////////////////////////
+
