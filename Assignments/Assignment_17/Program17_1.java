@@ -28,7 +28,7 @@ import java.util.Scanner;
 //  Class Name       : Logic
 //  Description      : This class contains a method to display the sum 
 //                     of digits in a given number.
-//  Author           : Chakradhar Rawaji Dugade
+//  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
 /////////////////////////////////////////////////////////////////////
@@ -95,3 +95,4 @@ class Program17_1
 //  Input : 0        Output : The sum of digits of given number : 0
 //
 /////////////////////////////////////////////////////////////////////
+
