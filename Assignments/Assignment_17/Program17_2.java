@@ -28,7 +28,7 @@ import java.util.Scanner;
 //  Class Name       : Logic
 //  Description      : This class contains a method to check whether 
 //                     a given number is palindrome or not.
-//  Author           : Chakradhar Rawaji Dugade
+//  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
 /////////////////////////////////////////////////////////////////////
@@ -98,3 +98,4 @@ class Program17_2
 //  Input : 74547   Output : Palindrome
 //
 /////////////////////////////////////////////////////////////////////
+
