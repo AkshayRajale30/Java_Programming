@@ -30,7 +30,7 @@ import java.util.Scanner;
 //  Class Name       : Logic
 //  Description      : This class contains a method to check whether 
 //                     the given number is a prime number or not.
-//  Author           : Chakradhar Rawaji Dugade
+//  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
 /////////////////////////////////////////////////////////////////////
@@ -108,3 +108,4 @@ class Program18_1
 //  Input : -7    Output : -7 is not a prime number
 //
 /////////////////////////////////////////////////////////////////////
+
