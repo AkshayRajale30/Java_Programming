@@ -26,7 +26,7 @@ import java.util.Scanner;
 //  Class Name       : Logic
 //  Description      : This class contains a method to print all 
 //                     Odd numbers upto given number
-//  Author           : Chakradhar Rawaji Dugade
+//  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
 /////////////////////////////////////////////////////////////////////
@@ -79,3 +79,4 @@ class Program18_3
 //  Input : 5        Output : 1       3       5    
 //  
 /////////////////////////////////////////////////////////////////////
+
