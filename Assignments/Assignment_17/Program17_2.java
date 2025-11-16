@@ -4,14 +4,14 @@
     START
         Accept number from user as no   
         If the input is negative then convert it to positive 
-        Take one variable sum 
-        Take one counter
-        Repeat until number becomes 0
-            Extract last digit using modulus operator
-            Add sum with digit
-            Divide number by 10 to remove last digit
-        End loop
-        Display addition result
+        Store the original number in a temporary variable 
+        Take one variable reverse 
+        Reverse the number
+        Now compare reversed number and original number
+        If they both are same
+            Diplay Palindrome
+        Otherwise
+            Display not Palindrome
     STOP
 */
 
@@ -26,8 +26,8 @@ import java.util.Scanner;
 /////////////////////////////////////////////////////////////////////
 //
 //  Class Name       : Logic
-//  Description      : This class contains a method to display the sum 
-//                     of digits in a given number.
+//  Description      : This class contains a method to check whether 
+//                     a given number is palindrome or not.
 //  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
@@ -35,25 +35,32 @@ import java.util.Scanner;
 
 class Logic
 {
-    public int sumOfDigits(int iNo)                               // Input
-    {
-        int iDigit = 0;
-        int iSum = 0;
-
+    public void checkPalindrome(int iNo)                           // Input
+    {        
         if(iNo < 0)                                                // Updater
         {
             iNo = -iNo;
         }
 
-        while(iNo != 0)
+        int iTemp = iNo;                                           // To store original number
+
+        int iDigit = 0;
+        int iRev = 0;    
+
+        while(iNo != 0)                                             // Business logic
         {
             iDigit = iNo % 10;
-            iSum = iSum + iDigit;
+            iRev = (iRev * 10) + iDigit;   
             iNo = iNo / 10;
         }
-
-        //System.out.println("The sum of digits of given number : " + iSum);
-        return iSum;
+        if(iRev == iTemp)
+        {
+            System.out.println("Palindrome");
+        }
+        else
+        {
+            System.out.println("Not Palindrome");
+        }
     }     
 }
 
@@ -63,11 +70,10 @@ class Logic
 //
 /////////////////////////////////////////////////////////////////////
 
-class Program17_1
+class Program17_2
 {
     public static void main(String args[])
     {
-        int iRet = 0;
         Scanner sc = new Scanner(System.in);                       // To accept user input
         int iValue = 0;
 
@@ -75,12 +81,9 @@ class Program17_1
         iValue = sc.nextInt();
 
         Logic obj = new Logic();                                   // Object creation
-        //obj.sumOfDigits(iValue);                                 // Method call
 
-        iRet = obj.sumOfDigits(iValue);                            // Method call 
-
-        System.out.println(iRet);
-
+        obj.checkPalindrome(iValue);                               // Method call 
+        
         sc.close();
     }   
 }
@@ -89,9 +92,9 @@ class Program17_1
 //
 //  Testcases successfully handled by the application
 //
-//  Input : 123      Output : The sum of digits of given number : 6
-//  Input : 560      Output : The sum of digits of given number : 11
-//  Input : -89      Output : The sum of digits of given number : 17
-//  Input : 0        Output : The sum of digits of given number : 0
+//  Input : 121     Output : Palindrome
+//  Input : 123     Output : Not Palindrome
+//  Input : -121    Output : Palindrome
+//  Input : 74547   Output : Palindrome
 //
 /////////////////////////////////////////////////////////////////////
