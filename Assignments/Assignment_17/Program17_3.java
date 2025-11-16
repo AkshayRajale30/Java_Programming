@@ -21,7 +21,7 @@ import java.util.Scanner;
 //  Class Name       : Logic
 //  Description      : This class contains a method to find the maximum 
 //                     of two numbers.
-//  Author           : Chakradhar Rawaji Dugade
+//  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
 /////////////////////////////////////////////////////////////////////
@@ -76,3 +76,4 @@ class Program17_3
 //  Input1 : -89    Input2 : 21       Output : 21
 //
 /////////////////////////////////////////////////////////////////////
+
