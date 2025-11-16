@@ -2,15 +2,15 @@
     Algorithm
 
     START
-        Accept number from user as n
+        Accept number from user as no
         If the input is negative then convert it to positive
-        Take one counter iCnt
-        Take one variable sum
-        Repeat until counter is less than or equal to n
-            Add counter to sum
+        Take one variable fact = 1
+        Take one counter 
+        Repeat until counter is less than or equal to no
+            Multiply fact by iCnt
             Increment counter by 1
         End loop
-        Display sum
+        Display fact
     STOP
 */
 
@@ -25,32 +25,31 @@ import java.util.Scanner;
 /////////////////////////////////////////////////////////////////////
 //
 //  Class Name       : Logic
-//  Description      : It class contains a method to calculate and display 
-//                     the summation of first N natural numbers
+//  Description      : This class contains method to find the factorial
+//                     of a given number.
 //  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
 /////////////////////////////////////////////////////////////////////
 
-class Logic 
-{                                                       
-    public void calculateSum(int n)                                // Input
+class Logic
+{
+    public void findFactorial(int iNo)                               // Input
     {
-        int iCnt = 0;
-        int iSum = 0;
-
-        if(n < 0)                                                  // Updater
+        if(iNo < 0)                                                  // Updater
         {
-            n = -n;
+            iNo = -iNo;
         }
 
-        for(iCnt = 1; iCnt <= n; iCnt++)                           // Business logic
+        int iFact = 1;                                             // Initialize factorial variable
+
+        for(int iCnt = 1; iCnt <= iNo; iCnt++)                       // Business logic
         {
-            iSum = iSum + iCnt;
+            iFact = iFact * iCnt;
         }
 
-        System.out.println("Sum of first N natural numbers is: " + iSum);
-    }   // End of calculateSum
+        System.out.println("Factorial of " + iNo + " is: " + iFact);
+    }   // End of findFactorial
 }
 
 /////////////////////////////////////////////////////////////////////
@@ -59,7 +58,7 @@ class Logic
 //
 /////////////////////////////////////////////////////////////////////
 
-class Program16_1
+class Program16_3
 {
     public static void main(String args[])
     {
@@ -69,8 +68,8 @@ class Program16_1
         System.out.print("Enter a number : ");
         iValue = sc.nextInt();
 
-        Logic obj = new Logic();                                   // Object creation                        
-        obj.calculateSum(iValue);                                  // Method call
+        Logic obj = new Logic();                                   // Object creation
+        obj.findFactorial(iValue);                                 // Method call
 
         sc.close();
     }   // End of main
@@ -80,7 +79,9 @@ class Program16_1
 //
 //  Testcases successfully handled by the application
 //
-//  Input : 13      Output : Sum of first N natural numbers is: 91
-//  Input : 5       Output : Sum of first N natural numbers is: 15
+//  Input : 5       Output : Factorial of 5 is: 120
+//  Input : 4       Output : Factorial of 4 is: 24
+//  Input : -3      Output : Factorial of 3 is: 6
+//  Input : 1       Output : Factorial of 1 is: 1
 //
 /////////////////////////////////////////////////////////////////////

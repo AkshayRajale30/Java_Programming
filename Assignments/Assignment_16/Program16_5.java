@@ -2,15 +2,14 @@
     Algorithm
 
     START
-        Accept number from user as n
-        If the input is negative then convert it to positive
-        Take one counter iCnt
-        Take one variable sum
-        Repeat until counter is less than or equal to n
-            Add counter to sum
+        Accept number from user as no   
+        If the input is negative then convert it to positive 
+        Take counter
+        Repeat until number becomes 0
+            Divide number by 10
             Increment counter by 1
         End loop
-        Display sum
+        Display counter as the total number of digits
     STOP
 */
 
@@ -25,32 +24,40 @@ import java.util.Scanner;
 /////////////////////////////////////////////////////////////////////
 //
 //  Class Name       : Logic
-//  Description      : It class contains a method to calculate and display 
-//                     the summation of first N natural numbers
+//  Description      : This class contains a method to count the total number 
+//                     of digits present in a given integer.
 //  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
 /////////////////////////////////////////////////////////////////////
 
-class Logic 
-{                                                       
-    public void calculateSum(int n)                                // Input
+class Logic
+{
+    public void countDigits(int iNo)                               // Input
     {
+        if(iNo < 0)                                                // Updater
+        {
+            iNo = -iNo;
+        }
+
         int iCnt = 0;
-        int iSum = 0;
 
-        if(n < 0)                                                  // Updater
+        if(iNo == 0)
         {
-            n = -n;
+            iCnt = 1;
         }
-
-        for(iCnt = 1; iCnt <= n; iCnt++)                           // Business logic
+        else
         {
-            iSum = iSum + iCnt;
+            while(iNo != 0)                                        // Business logic
+            {
+                iNo = iNo / 10;
+                iCnt++;
+            }
         }
-
-        System.out.println("Sum of first N natural numbers is: " + iSum);
-    }   // End of calculateSum
+        System.out.println("Number of digits are: " + iCnt);
+    }
+    
+      
 }
 
 /////////////////////////////////////////////////////////////////////
@@ -59,7 +66,7 @@ class Logic
 //
 /////////////////////////////////////////////////////////////////////
 
-class Program16_1
+class Program16_5
 {
     public static void main(String args[])
     {
@@ -69,8 +76,8 @@ class Program16_1
         System.out.print("Enter a number : ");
         iValue = sc.nextInt();
 
-        Logic obj = new Logic();                                   // Object creation                        
-        obj.calculateSum(iValue);                                  // Method call
+        Logic obj = new Logic();                                   // Object creation
+        obj.countDigits(iValue);                                   // Method call
 
         sc.close();
     }   // End of main
@@ -80,7 +87,9 @@ class Program16_1
 //
 //  Testcases successfully handled by the application
 //
-//  Input : 13      Output : Sum of first N natural numbers is: 91
-//  Input : 5       Output : Sum of first N natural numbers is: 15
+//  Input : 1234     Output : Number of digits are: 4
+//  Input : 560      Output : Number of digits are: 3
+//  Input : -89      Output : Number of digits are: 2
+//  Input : 0        Output : Number of digits are: 1
 //
 /////////////////////////////////////////////////////////////////////

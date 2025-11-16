@@ -4,13 +4,10 @@
     START
         Accept number from user as n
         If the input is negative then convert it to positive
-        Take one counter iCnt
-        Take one variable sum
-        Repeat until counter is less than or equal to n
-            Add counter to sum
-            Increment counter by 1
-        End loop
-        Display sum
+        If number is divisible by 2
+            Then display Number is Even
+        Otherwise
+            Display Number is Odd
     STOP
 */
 
@@ -25,32 +22,31 @@ import java.util.Scanner;
 /////////////////////////////////////////////////////////////////////
 //
 //  Class Name       : Logic
-//  Description      : It class contains a method to calculate and display 
-//                     the summation of first N natural numbers
+//  Description      : This class contains method to check whether
+//                     a given number is even or odd.
 //  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
 /////////////////////////////////////////////////////////////////////
 
-class Logic 
-{                                                       
-    public void calculateSum(int n)                                // Input
+class Logic                                                        
+{
+    public void checkEvenOdd(int n)                                // Input
     {
-        int iCnt = 0;
-        int iSum = 0;
-
         if(n < 0)                                                  // Updater
         {
             n = -n;
         }
 
-        for(iCnt = 1; iCnt <= n; iCnt++)                           // Business logic
+        if(n % 2 == 0)                                             // Business logic
         {
-            iSum = iSum + iCnt;
+            System.out.println("Number is Even");
         }
-
-        System.out.println("Sum of first N natural numbers is: " + iSum);
-    }   // End of calculateSum
+        else
+        {
+            System.out.println("Number is Odd");
+        }
+    }   // End of checkEvenOdd
 }
 
 /////////////////////////////////////////////////////////////////////
@@ -59,7 +55,7 @@ class Logic
 //
 /////////////////////////////////////////////////////////////////////
 
-class Program16_1
+class Program16_2
 {
     public static void main(String args[])
     {
@@ -69,8 +65,8 @@ class Program16_1
         System.out.print("Enter a number : ");
         iValue = sc.nextInt();
 
-        Logic obj = new Logic();                                   // Object creation                        
-        obj.calculateSum(iValue);                                  // Method call
+        Logic obj = new Logic();                                   // Object creation
+        obj.checkEvenOdd(iValue);                                  // Method call
 
         sc.close();
     }   // End of main
@@ -80,7 +76,9 @@ class Program16_1
 //
 //  Testcases successfully handled by the application
 //
-//  Input : 13      Output : Sum of first N natural numbers is: 91
-//  Input : 5       Output : Sum of first N natural numbers is: 15
+//  Input : 13      Output : Number is Odd
+//  Input : 24      Output : Number is Even
+//  Input : -5      Output : Number is Odd
+//  Input : -8      Output : Number is Even
 //
 /////////////////////////////////////////////////////////////////////
