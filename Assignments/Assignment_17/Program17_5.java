@@ -26,7 +26,7 @@ import java.util.Scanner;
 //  Class Name       : Logic
 //  Description      : This class contains a method to display table 
 //                     of a given number.
-//  Author           : Chakradhar Rawaji Dugade
+//  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
 /////////////////////////////////////////////////////////////////////
@@ -82,3 +82,4 @@ class Program17_5
 //  Input : -10     Output : 10      20      30      40      50      60      70      80      90      100
 //
 /////////////////////////////////////////////////////////////////////
+
