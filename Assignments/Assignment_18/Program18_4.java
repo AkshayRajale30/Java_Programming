@@ -30,7 +30,7 @@ import java.util.Scanner;
 //  Class Name       : Logic
 //  Description      : This class contains a method to display the sum 
 //                     of even and odd digits in a given number.
-//  Author           : Chakradhar Rawaji Dugade
+//  Author           : Akshay Ashok Rajale
 //  Date             : 02/11/2025
 //
 /////////////////////////////////////////////////////////////////////
@@ -101,3 +101,4 @@ class Program18_4
 //  Input : 0          Output : Sum of even digits : 0   Sum of odd digits : 0
 //
 /////////////////////////////////////////////////////////////////////
+
