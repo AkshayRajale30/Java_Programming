@@ -1,0 +1,50 @@
+import java.util.*;
+
+class Number
+{
+    public long  CalculateFactorial(int iNo)
+    {
+        int i = 0;
+        long iFact = 1;   // Importnat
+
+        if(iNo < 0)
+        {
+            iNo = -iNo;
+        }
+
+        for(i = 1; i <= iNo; i++)
+        {
+            iFact = iFact + i;
+        }
+
+        return iFact;
+    }
+} // End of Number
+
+class program88
+{
+    public static void main(String A[]) 
+    {
+        int iValue = 0;
+        long iRet = 0;
+
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter Number : ");
+        iValue = sobj.nextInt();
+
+        Number nobj = new Number();
+        iRet = nobj.CalculateFactorial(iValue);
+
+        System.out.println("Factorial is :"+iRet);
+
+        // Important
+        
+        sobj = null;
+        nobj = null;
+
+        System.gc();
+    }
+}
+
+// 2432902008176640000

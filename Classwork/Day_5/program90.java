@@ -1,0 +1,42 @@
+import java.util.*;
+
+class Digit
+{
+    public void DisplayDigit(int iNo)
+    {
+        int iDigit = 0;
+
+        while(iNo !=0)
+        {
+            iDigit = iNo % 
+        }
+    }
+
+}
+
+class program90
+{
+    public static void main(String A[]) 
+    {
+        int iValue = 0;
+
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter Number : ");
+        iValue = sobj.nextInt();
+
+
+        Digit dobj = new Digit();
+        dobj.DisplayDigit(iValue);
+
+
+        // Important
+        
+        sobj = null;
+        dobj = null;
+
+        System.gc();
+    }
+}
+
+// 2432902008176640000
