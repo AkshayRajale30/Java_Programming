@@ -8,7 +8,12 @@ abstract class Base
     abstract public int Substraction(int a, int b);
 }
 
-class AbstractDemo1
+class Derived extends Base      // Error
+{
+
+}
+
+class AbstractDemo2
 {
     public static void main(String A[])
     {
